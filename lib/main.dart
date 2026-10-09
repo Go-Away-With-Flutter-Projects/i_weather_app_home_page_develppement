@@ -10,7 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: WeatherProjectDeveloping());
+    return const MaterialApp(
+      home: WeatherProjectDeveloping(),
+    );
   }
 }
 
@@ -64,16 +66,17 @@ class WeatherProjectDeveloping extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   child: Container(
                     alignment: Alignment.center,
-                    width: 300,
+                    // width: 300,
                     height: 300,
-                    margin: const EdgeInsets.only(top: 55),
+                    margin: const EdgeInsets.only(
+                      top: 55,
+                    ),
                     decoration: BoxDecoration(
                       //backgroundBlendMode: BlendMode.modulate,
                       color: const Color.fromARGB(215, 94, 123, 136),
                       border: Border.all(
-                        color: const Color.fromARGB(255, 190, 165, 165),
-                        width: 1,
-                      ),
+                          color: const Color.fromARGB(255, 190, 165, 165),
+                          width: 1),
                       shape: BoxShape.circle,
                       //borderRadius: BorderRadius.circular(200),
                       boxShadow: const [
@@ -85,84 +88,76 @@ class WeatherProjectDeveloping extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Text(
-                      'Weather',
-                      style: GoogleFonts.badScript(
-                        fontSize: 90,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 18, 23, 84),
-                      ),
-                    ),
+                    child: Text('Weather',
+                        style: GoogleFonts.badScript(
+                            fontSize: 90,
+                            fontWeight: FontWeight.bold,
+                            color: const Color.fromARGB(255, 18, 23, 84))),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  child: Row(
+                Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     // mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        clipBehavior: Clip.hardEdge,
-                        height: 80,
-                        width: 350,
-                        margin: const EdgeInsets.only(top: 500),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(182, 115, 164, 224),
-                          border: Border.all(
-                            color: const Color.fromARGB(182, 81, 144, 221),
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(50),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Color.fromARGB(255, 139, 240, 67),
-                              blurStyle: BlurStyle.outer,
-                              spreadRadius: 1,
-                              blurRadius: 2,
-                              offset: Offset(0.5, 0.5),
-                            ),
-                          ],
-                        ),
-                        child: ListView.separated(
-                          //physics: const NeverScrollableScrollPhysics(),
-                          separatorBuilder: (context, index) {
-                            return Container(color: Colors.black, width: 2);
-                          },
-                          scrollDirection: Axis.horizontal,
-                          // shrinkWrap: false,
-                          itemCount: 10,
-                          itemBuilder: (context, index) {
-                            return Row(
-                              children: [
-                                Container(
-                                  height: 70,
-                                  width: 70,
-                                  margin: const EdgeInsets.only(
-                                    left: 10,
-                                    right: 10,
-                                  ),
-                                  decoration: const BoxDecoration(
-                                    color: Color.fromARGB(255, 25, 51, 73),
-                                    shape: BoxShape.circle,
-                                    // borderRadius:
-                                    //     BorderRadius.circular(50),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 2,
-                                        spreadRadius: 0.5,
-                                        blurStyle: BlurStyle.outer,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                          clipBehavior: Clip.hardEdge,
+                          height: 80,
+                          width: 350,
+                          margin: const EdgeInsets.only(top: 500),
+                          decoration: BoxDecoration(
+                              color:
+                                  const Color.fromARGB(182, 115, 164, 224),
+                              border: Border.all(
+                                color:
+                                    const Color.fromARGB(182, 81, 144, 221),
+                                width: 2,
+                              ),
+                              borderRadius: BorderRadius.circular(50),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color:
+                                        Color.fromARGB(255, 139, 240, 67),
+                                    blurStyle: BlurStyle.outer,
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: Offset(0.5, 0.5))
+                              ]),
+                          child: ListView.separated(
+                              //physics: const NeverScrollableScrollPhysics(),
+                              separatorBuilder: (context, index) {
+                                return Container(
+                                  color: Colors.black,
+                                  width: 2,
+                                );
+                              },
+                              scrollDirection: Axis.horizontal,
+                              // shrinkWrap: false,
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Row(
+                                  children: [
+                                    Container(
+                                      // height: 70,
+                                      width: 70,
+                                      margin: const EdgeInsets.only(
+                                          left: 10, right: 10),
+                                      decoration: const BoxDecoration(
+                                          color: Color.fromARGB(
+                                              255, 25, 51, 73),
+                                          shape: BoxShape.circle,
+                                          // borderRadius:
+                                          //     BorderRadius.circular(50),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                blurRadius: 2,
+                                                spreadRadius: 0.5,
+                                                blurStyle: BlurStyle.outer)
+                                          ]),
+                                    )
+                                  ],
+                                );
+                              }))
+                    ])
               ],
             ),
           ],
